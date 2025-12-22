@@ -17,6 +17,6 @@ module challenge::day_01 {
     // const MY_ADDRESS: address = @0x1;
     //
     // Remember: Constants must be named in UPPERCASE!
-
+    const COUNT:u64 =5;
 }
 
