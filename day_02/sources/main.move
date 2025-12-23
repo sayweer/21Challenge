@@ -15,10 +15,27 @@ module challenge::day_02 {
     //     // Your code here
     // }
 
+public fun sum(number1 :u64 ,number2 :u64): u64{
+    number1 + number2
+}
+
     // TODO: Write a test function that checks sum(1, 2) == 3
     // #[test]
     // fun test_sum() {
     //     // Your code here
     // }
+   #[test]
+    fun test_sum()
+    {
+        let sonuc:u64 = sum(15, 45);
+        assert_eq!(sonuc, 60)
+    }
+
+     /*   #[test]
+    fun test_sum()
+    {
+        let sonuc:u64 = sum(15, 45);
+        assert_eq!(sonuc, 65)
+    }*/
 }
 
