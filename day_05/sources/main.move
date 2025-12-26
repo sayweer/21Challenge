@@ -8,7 +8,6 @@
 module challenge::day_05 {
     use std::vector;
 
-    // Copy from day_04
     public struct Habit has copy, drop {
         name: vector<u8>,
         completed: bool,
@@ -35,6 +34,16 @@ module challenge::day_05 {
         vector::push_back(&mut list.habits, habit);
     }
 
+    public fun complete_habit(list: &mut HabitList, index: u64) {
+        let habit_count = vector::length(&list.habits);
+
+        if (index < habit_count) {
+            let habit_ref = vector::borrow_mut(&mut list.habits, index);
+            habit_ref.completed = true;
+        }
+    }
+}
+
     // TODO: Write a function 'complete_habit' that:
     // - Takes list: &mut HabitList and index: u64
     // - Checks if index is valid (less than vector length)
@@ -45,5 +54,5 @@ module challenge::day_05 {
     //     // Your code here
     //     // Hint: if (index < length) { ... }
     // }
-}
+
 
